@@ -1,0 +1,27 @@
+$primary-color : #81b441;
+$links-color : #efeeee;
+$orange : #fab95b;
+;
+
+.title {
+    font-size: 4.3rem;
+    color: $primary-color;
+    font-family: 'Open Sans', serif;
+    font-weight: 100;
+}
+
+.paragraph {
+
+    width: 50%;
+
+}
+
+.mg {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.pd {
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
