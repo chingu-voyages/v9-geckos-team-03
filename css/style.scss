@@ -7,12 +7,14 @@
 }
 
 body {
-
+    overflow-x: hidden;
     font-family: 'Raleway', sans-serif;
     font-size: 1rem;
     line-height: 1.6;
-    background-color: white;
+    background-color: #eee;
     color: #636161;
+    text-align: center;
+    height: 2000px; //to delete after !!
 }
 
 a {
@@ -70,6 +72,7 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
+    position: relative;
 
     p {
         font-size: 2rem;
@@ -84,5 +87,64 @@ header {
         color: $primary-color;
         font-size: 2rem;
         font-weight: 100;
+    }
+}
+
+.categories-container {
+    position: absolute;
+    top: 105%;
+    width: 100%;
+
+    h1 {
+        background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+        border-radius: 5px;
+        font-weight: 100;
+        color: $white;
+    }
+
+    .categories {
+        margin: 0 auto;
+        display: grid;
+        width: 80%;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+
+        &>* {
+            background: $white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            // align-items: center;
+            height: 350px;
+            box-shadow: 0 10px 6px -6px #777;
+        }
+
+        .img {
+
+            height: 200px;
+            border-bottom-left-radius: 50%;
+            border-bottom-right-radius: 50%;
+
+            &.img-salad {
+                background: url(../dist/img/salads.jpeg);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            &.img-drink {
+                background: url(../dist/img/drinks.jpg);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            &.img-dessert {
+                background: url(../dist/img/desserts.jpg);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
     }
 }
