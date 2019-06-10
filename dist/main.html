@@ -1,67 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700 | Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Amatic+SC:700 | Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
     <title>Recipe App</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <nav>
-        <ul>
-            <li class="pd"><a href="#">Home</a></li>
-            <li class="pd"><a href="#">Recipes</a></li>
-        </ul>
+      <ul>
+        <li class="pd"><a href="#">Home</a></li>
+        <li class="pd"><a href="#">Recipes</a></li>
+      </ul>
     </nav>
     <header>
-        <h1 class="title mg-y">
-            <i class="fas fa-pizza-slice"></i> RECIPE APP
-        </h1>
-        <p class="paragraph mg-y">Are You Passionate About Cooking?
-            This Is The Best Place For You .
-        </p>
-        <p class="mg-y">Discover New <strong>RECIPES</strong></p>
+      <h1 class="title mg-y"><i class="fas fa-pizza-slice"></i> RECIPE APP</h1>
+      <p class="paragraph mg-y">
+        Are You Passionate About Cooking? This Is The Best Place For You .
+      </p>
+      <p class="mg-y">Discover New <strong>RECIPES</strong></p>
     </header>
 
     <section class="categories-container">
-        <div>
-            <h1 class="mg-y">Choose Your Category</h1>
+      <div>
+        <h1 class="mg-y banner">Choose Your Category</h1>
+      </div>
+      <div class="title title-second mg-y">POPULAR CATEGORIES</div>
+      <div class="categories">
+        <div class="salads">
+          <div class="img img-salad"></div>
+          <h4>Salads</h4>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <button class="btn mg-y">LEARN MORE</button>
         </div>
-        <div class="title title-second mg-y">POPULAR CATEGORIES</div>
-        <div class="categories">
-            <div class="salads">
-                <div class="img img-salad"></div>
-                <h4>Salads</h4>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <button class="btn mg-y">LEARN MORE</button>
-            </div>
-            <div class="drinks">
-                <div class="img img-drink"></div>
-                <h4>Drinks</h4>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <button class="btn mg-y">LEARN MORE</button>
-            </div>
-
-            <div class="desserts">
-                <div class="img img-dessert"></div>
-                <h4>Desserts</h4>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <button class="btn mg-y">LEARN MORE</button>
-            </div>
-
-
+        <div class="drinks">
+          <div class="img img-drink"></div>
+          <h4>Drinks</h4>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <button class="btn mg-y">LEARN MORE</button>
         </div>
 
+        <div class="desserts">
+          <div class="img img-dessert"></div>
+          <h4>Desserts</h4>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <button class="btn mg-y">LEARN MORE</button>
+        </div>
+      </div>
     </section>
+    <h1 class="mg-y banner">Popular Recipes</h1>
+    <div class="recipesApi">
+      <div class="recipe"></div>
+    </div>
 
-
-
-</body>
-
+    <script src="../js/index.js"></script>
+  </body>
 </html>
