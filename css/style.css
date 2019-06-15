@@ -64,6 +64,10 @@
           box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   overflow-x: hidden;
   font-family: 'Raleway', sans-serif;
@@ -103,11 +107,14 @@ nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   border-radius: 3px;
   background: rgba(2, 2, 20, 0.22);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 nav ul li a {
@@ -124,6 +131,7 @@ header {
   height: 100vh;
   width: 100vw;
   background: url(../dist/img/headBg.jpeg) no-repeat;
+  background-attachment: fixed;
   background-position: center;
   background-size: cover;
   display: -webkit-box;
@@ -239,5 +247,22 @@ header strong {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 1rem;
+}
+
+input[type="search"],
+button[type="search"] {
+  outline: none;
+  position: absolute;
+  right: 7rem;
+  max-width: 20rem;
+  border-radius: 5px;
+}
+
+input[type="search"] {
+  padding: 5px;
+}
+
+button[type="search"] {
+  right: 1rem;
 }
 /*# sourceMappingURL=style.css.map */
