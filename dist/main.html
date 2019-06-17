@@ -17,8 +17,10 @@
     <ul>
       <li class="pd"><a href="#">Home</a></li>
       <li class="pd"><a href="#">Recipes</a></li>
-      <input class=" pd" type="search" placeholder="Search For A Recipe... " />
-      <button class="btn pd" type="search"><a href="#recipes"> Search</a></button>
+      <form class="form" action="search.html" method='GET'>
+        <input class=" pd" type="search" name='search' placeholder="Search For A Recipe... " />
+        <button class="btn pd" type="search"><a href="/dist/search.html"> Search</a></button>
+      </form>
     </ul>
   </nav>
   <header>
@@ -29,13 +31,13 @@
     <p class="mg-y">Discover New <strong>RECIPES</strong></p>
   </header>
 
-  <img src="http://www.loadinfo.net/images/preview/11_cyrcle_one_24.gif?1200916238" id="animated-gif"
-    style="display:none;" />
+
   <section class="categories-container">
     <div>
       <h1 class="mg-y banner">Choose Your Category</h1>
     </div>
     <div class="title title-second mg-y">POPULAR CATEGORIES</div>
+
     <div class="categories">
       <div class="salads">
         <div class="img img-salad"></div>
@@ -59,8 +61,12 @@
     </div>
   </section>
   <h1 id="recipes" class="mg-y banner">Recipes</h1>
-  <div class="recipesApi">
-    <div class="recipe"></div>
+
+  <div class=" recipesApi">
+    <div class="recipe">
+
+      <img src="/dist/img/Infinity-1s-200px.gif" id="animated-gif" style="display:none" />
+    </div>
   </div>
 
   <script src="../js/index.js"></script>

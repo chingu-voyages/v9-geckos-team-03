@@ -64,10 +64,6 @@
           box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   overflow-x: hidden;
   font-family: 'Raleway', sans-serif;
@@ -76,7 +72,6 @@ body {
   background-color: #eee;
   color: #636161;
   text-align: center;
-  height: 2000px;
 }
 
 a {
@@ -252,10 +247,13 @@ header strong {
 input[type="search"],
 button[type="search"] {
   outline: none;
-  position: absolute;
-  right: 7rem;
   max-width: 20rem;
   border-radius: 5px;
+}
+
+form {
+  position: absolute;
+  right: 3rem;
 }
 
 input[type="search"] {
@@ -264,5 +262,13 @@ input[type="search"] {
 
 button[type="search"] {
   right: 1rem;
+  margin: 0;
+}
+
+#animated-gif {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  margin: 0 auto;
 }
 /*# sourceMappingURL=style.css.map */
