@@ -1,5 +1,5 @@
 body {
-   background-image: url("./images/headBg.jpeg")
+   background-image: url("./images/headBg.jpeg");
 }
 
 #mainText {
@@ -55,6 +55,8 @@ body {
   justify-content: center;
   width: 100%;
   margin-top: 2rem;
+
+
 }
 
 .recipeCards {

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="addRecipes.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <title></title>
+  </head>
+  <body>
+    <div id="headContainer">
+        <button id="mainBtn" onclick="toggleVisibility()">Add Recipes +</button>
+        <div class="search-container">
+          <form action="">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit"><i class="fas fa-search"></i></button>
+          </form>
+        </div>
+    </div>
+    <hr />
+    <div id="formContainer">
+      <div id="closeBtn"><i class="fas fa-times"></i></div>
+    <h1 id="mainText"><em>Add your favorite recipes</em></h1>
+
+      <form method="post" name="recForm" onsubmit="return formSubmit();return false">
+        <div class="labelContainer">
+          <label class="labelName">Recipe Name</label>
+          <input id="recipeName" class="inputStyle" type="text" name="recName" placeholder="Enter the Recipe name"  required/>
+        </div>
+        <!-- <div class="labelContainer">
+          <label>Recipe Image URL</label>
+          <input id="imageUrl" class="inputStyle" type="text" name="Recipe Image URL" placeholder="Enter the Recipe Image URL"/>
+        </div> -->
+        <div class="labelContainer">
+          <label>Recipe Provided By </label>
+          <input id="providerName" class="inputStyle" type="text" name="recProvider" placeholder="Enter the Book/Magazine/Website name"/>
+        </div>
+        <div class="labelContainer">
+          <label>Recipe Source URL</label>
+          <input id="sourceUrl" class="inputStyle" type="text" name="recSourceURL" placeholder="Enter the Recipe Source URL"/>
+        </div>
+        <div class="labelContainer">
+          <label class="labelTextArea">Recipe Ingredients</label>
+          <textarea id="ingredients" class="inputStyle1" name = "recIngredients" placeholder="Recipe Ingredients, separated by comma" required></textarea>
+        </div>
+        <div class="labelContainer">
+          <label class="labelTextArea">Cooking Direction</label>
+          <textarea id="directions" class="inputStyle1" name = "recDescription" placeholder="Recipe Description" required></textarea>
+        </div>
+        <div class="addBtnDiv">
+            <input type="submit" class="addBtn" value="Add Recipe" id="submitBtn" onclick=""/>
+        </div>
+      </form>
+    </div>
+
+    <div id="recipeContainer">
+        <div class="recipeCards">
+          <div>
+              <img src="./images/recipeCard.jpg" alt="Recipe Card"/>
+          </div>
+          <div class="recipeDetails">
+              <h3>Ham And Cheese Sandwich</h3>
+              <p><em>Provided by Pioneer Woman</em></p>
+
+              <div class="btn">
+                  <a  target="_blank" href="" class="details">Details</a>
+                  <a  target="_blank" href="" class="recipeUrl">Recipe URL</a>
+              </div>
+          </div>
+        </div>
+
+        <div class="recipeCards">
+          <div>
+              <img src="./images/recipeCard.jpg" alt="Recipe Card"/>
+          </div>
+          <div class="recipeDetails">
+              <h3>Pesto Pasta</h3>
+              <p><em>Provided by Taste of home</em></p>
+
+              <div class="btn">
+                  <a  target="_blank" href="" class="details">Details</a>
+                  <a  target="_blank" href="" class="recipeUrl">Recipe URL</a>
+              </div>
+          </div>
+        </div>
+
+        <div class="recipeCards">
+          <div>
+              <img src="./images/recipeCard.jpg" alt="Recipe Card"/>
+          </div>
+          <div class="recipeDetails">
+              <h3>Vegetable Pizza</h3>
+              <p><em>Provided by Southern Living</em></p>
+
+              <div class="btn">
+                  <a  target="_blank" href="" class="details">Details</a>
+                  <a  target="_blank" href="" class="recipeUrl">Recipe URL</a>
+              </div>
+          </div>
+        </div>
+    </div>
+
+  <script src="addRecipes.js" type="text/javascript"></script>
+  </body>
+</html>
