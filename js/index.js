@@ -1,26 +1,23 @@
 const recipes = document.querySelector('.recipesApi');
 const search = document.querySelector('input[type="search"]');
 const searchBtn = document.querySelector('button[type="search"]');
+const loader = document.querySelector('#animated-gif');
 search.addEventListener('search', displayRecipes);
 searchBtn.addEventListener('click', displayRecipes);
 
 function displayRecipes() {
-    let value = '';
-    value = search.value != '' ? search.value : 'pizza';
-    console.log(value);
-    fetch(
-            `https://api.edamam.com/search?q=${value}&app_id=80010e5d&app_key=a840721c6ce80a1b19aa39f1984cb906`
-        )
-        .then(res => res.json())
-        .then(({
-            hits
-        }) => {
-            let output = '';
-            hits.forEach(({
-                recipe
-            }) => {
-                // console.log(recipe)
-                output += `
+  let value = '';
+  value = search.value != '' ? search.value : 'pizza';
+  //   console.log(value);
+  fetch(
+    `https://api.edamam.com/search?q=${value}&app_id=80010e5d&app_key=a840721c6ce80a1b19aa39f1984cb906`
+  )
+    .then(res => res.json())
+    .then(({ hits }) => {
+      let output = '';
+      hits.forEach(({ recipe }) => {
+        // console.log(recipe)
+        output += `
         <ul class='recipe' >
         <img src='${recipe.image}' />
         <li >${recipe.source}</li>
@@ -28,12 +25,27 @@ function displayRecipes() {
          <li>${recipe.healthLabels}</li>
         </ul>
         `;
-            });
-            recipes.innerHTML = output;
-        });
-    recipes.scrollIntoView({
-        behavior: 'smooth'
+      });
+      recipes.innerHTML = output;
     });
+  recipes.scrollIntoView({
+    behavior: 'smooth'
+  });
 }
 
 displayRecipes();
+
+// search.addEventListener('search', load);
+// function load() {
+//   if (loader.style.display == '' || loader.style.display == 'block') {
+//     loader.style.display = 'none';
+//     // alert('yea');
+//   } else {
+//     loader.style.display = 'block';
+//     // alert('yes');
+//   }
+// }
+
+search.addEventListener('endEvent', () => {
+  console.log('events end');
+});
