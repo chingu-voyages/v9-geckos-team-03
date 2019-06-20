@@ -172,7 +172,7 @@ button[type="search"] {
     border-radius: 5px;
 }
 
-form {
+nav form {
     position: absolute;
     right: 3rem;
 }
@@ -191,4 +191,65 @@ button[type="search"] {
     height: 100px;
     display: inline-block;
     margin: 0 auto;
+}
+
+.login {
+    background: #1D976C;
+    background: -webkit-linear-gradient(to right, #93F9B9, #1D976C);
+    background: linear-gradient(to right, #93F9B9, #1D976C);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+        background: #ffffff;
+        width: 370px;
+        height: 60%;
+        box-shadow: 0 2px 18px;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        justify-content: space-between;
+
+        svg {
+            margin: auto;
+            margin: 0 6.5rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+
+            &>* {
+                margin-bottom: 1rem;
+            }
+        }
+
+        input {
+            background: #f2f2f2;
+            outline: none;
+            border: 0;
+            padding: 0.6rem;
+        }
+
+        button {
+            background: #00b241;
+            padding: 0.6rem;
+            color: #fff;
+            cursor: pointer;
+            outline: none;
+            border: 0;
+        }
+
+        p {
+            color: #d0d0d0;
+            font-weight: 600;
+
+            a {
+                color: #00b241
+            }
+        }
+    }
 }

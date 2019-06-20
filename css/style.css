@@ -251,7 +251,7 @@ button[type="search"] {
   border-radius: 5px;
 }
 
-form {
+nav form {
   position: absolute;
   right: 3rem;
 }
@@ -270,5 +270,85 @@ button[type="search"] {
   height: 100px;
   display: inline-block;
   margin: 0 auto;
+}
+
+.login {
+  background: #1D976C;
+  background: -webkit-gradient(linear, left top, right top, from(#93F9B9), to(#1D976C));
+  background: linear-gradient(to right, #93F9B9, #1D976C);
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login .container {
+  background: #ffffff;
+  width: 370px;
+  height: 60%;
+  -webkit-box-shadow: 0 2px 18px;
+          box-shadow: 0 2px 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.login .container svg {
+  margin: auto;
+  margin: 0 6.5rem;
+}
+
+.login .container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.login .container form > * {
+  margin-bottom: 1rem;
+}
+
+.login .container input {
+  background: #f2f2f2;
+  outline: none;
+  border: 0;
+  padding: 0.6rem;
+}
+
+.login .container button {
+  background: #00b241;
+  padding: 0.6rem;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+}
+
+.login .container p {
+  color: #d0d0d0;
+  font-weight: 600;
+}
+
+.login .container p a {
+  color: #00b241;
 }
 /*# sourceMappingURL=style.css.map */
