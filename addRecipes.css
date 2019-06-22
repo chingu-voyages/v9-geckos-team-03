@@ -5,14 +5,15 @@ body {
 #headContainer {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  margin: 0px  3px;
+  justify-content: space-between;
   width: 100%;
-  margin: 30px 0px;
+  margin: 30px 10px;
+
 }
 
 #formContainer {
-  background: rgba(0, 0, 0, 0.3);
+  /* background: rgba(0, 0, 0, 0.3); */
+  background-color: white;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
   padding: 10px;
   padding-bottom: 20px;
@@ -34,6 +35,20 @@ body {
   border-radius: 5px;
   cursor: pointer;
   outline: none;
+}
+
+#backBtn {
+  font-size: 18px;
+  cursor: pointer;
+  padding: 6px 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+  color: #fab95b;
+  display: none;
 }
 
 .search-container {
@@ -59,6 +74,7 @@ body {
   font-size: 17px;
   border: none;
   cursor: pointer;
+  outline: none;
   border-radius: 2px;
 }
 
@@ -74,8 +90,8 @@ body {
 #mainText {
   text-align: center;
   font-size: 25pt;
-  color: #333333;
-  margin-top: 2rem;
+  color: #fab95b;
+  margin-top: -20px;
   margin-left: 50px;
 }
 
@@ -87,6 +103,10 @@ body {
   color: rgba(0, 0, 0, 0.6);
   border-radius: 2px;
   cursor: pointer;
+}
+
+#closeBtn:hover {
+  color: #fab95b;
 }
 
 .labelContainer {
@@ -104,15 +124,21 @@ body {
   margin-left: 5px;
 }
 
+.labelCategory {
+  margin-left: 18px;
+}
+
 label {
-  color: #333333;
+  color: #696969;
   font-size: 17px;
+  font-weight: 400;
   margin-top: -10px;
   margin-right: 2%;
+  font-style: italic;
 }
 
 .inputStyle {
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.6);
   font-size: 13px;
   color: #81b441;
   width: 50%;
@@ -126,7 +152,7 @@ label {
 
 .inputStyle1 {
   width: 50.5%;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.6);
   font-size: 13px;
   color: #81b441;
   height: 20px;
@@ -154,7 +180,7 @@ label {
 }
 
 .addBtn {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.6);
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
   color: #fab95b;
   padding: 7px 10px;
@@ -173,6 +199,7 @@ label {
   justify-content: center;
   width: 100%;
   margin-top: 2rem;
+  padding: 0;
 }
 
 .recipeCards {
@@ -198,7 +225,10 @@ label {
 }
 
 .btn{
+  display: flex;
+  flex-direction: row;
   background-color: white;
+  color: white;
   height: 35px;
   padding:20px;
   padding-bottom: 0px;
@@ -207,15 +237,30 @@ label {
 }
 
 .details {
-  background-color: #fab95b;
-  width: 20px;
-  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 60px;
+  height: 20px;
+  color: #fab95b;
+  font-weight: bold;
   text-decoration: none;
   padding: 5px 10px;
   border-radius: 3px;
-  margin: 10px 15px;
+  margin-top: -5px;
 }
 
+.edit {
+  color: #81b441;
+  margin-left: 6rem;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.delete {
+  color: #fab95b;
+  margin-left: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
 .recipeUrl {
   background-color: #81b441;
   width: 20px;
