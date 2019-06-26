@@ -244,6 +244,32 @@ header strong {
   padding: 1rem;
 }
 
+.recipesApi .recipe .recipe-title {
+  color: #77d205;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+.recipesApi .recipe .recipe-title:hover {
+  color: #fab95b;
+}
+
+.recipesApi .recipe img {
+  cursor: pointer;
+}
+
+.recipesApi .recipe span {
+  font-weight: bold;
+  color: #bd4141;
+}
+
+.recipesApi .recipe .healthLabels {
+  font-size: 0.9rem;
+}
+
 input[type="search"],
 button[type="search"] {
   outline: none;
@@ -350,5 +376,19 @@ button[type="search"] {
 
 .login .container p a {
   color: #00b241;
+}
+
+.back {
+  display: block;
+  position: absolute;
+  top: 8%;
+  left: 5%;
+  color: #00b241;
+  font-weight: bold;
+}
+
+.resultsFor {
+  font-family: 'Amaticbold', cursive;
+  font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */

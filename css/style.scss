@@ -159,9 +159,33 @@ header {
         border-radius: 5px;
         display: flex;
         flex-direction: column;
-        // height: 350px;
         padding: 1rem;
-        // display: none;
+
+        .recipe-title {
+            color: $primary-color;
+            font-weight: bold;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $orange;
+            }
+        }
+
+        img {
+            cursor: pointer;
+        }
+
+        span {
+            font-weight: bold;
+            color: #bd4141;
+        }
+
+        .healthLabels {
+            font-size: 0.9rem;
+
+        }
     }
 }
 
@@ -202,6 +226,8 @@ button[type="search"] {
     display: flex;
     justify-content: center;
     align-items: center;
+
+
 
     .container {
         background: #ffffff;
@@ -252,4 +278,18 @@ button[type="search"] {
             }
         }
     }
+}
+
+.back {
+    display: block;
+    position: absolute;
+    top: 8%;
+    left: 5%;
+    color: #00b241;
+    font-weight: bold;
+}
+
+.resultsFor {
+    font-family: 'Amaticbold', cursive;
+    font-weight: bold;
 }

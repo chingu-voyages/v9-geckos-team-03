@@ -28,14 +28,13 @@ function displayRecipes() {
         recipe
       }) => {
         // console.log(recipe)
-        result = `Results For ${value} :`
+        result = `Results For '${value}'`
         output += `
         
         <ul class='recipe' >
         <img src='${recipe.image}' />
-        <li >${recipe.source}</li>
-        <li>${recipe.label}</li>Ingredients:
-         <li>${recipe.healthLabels}</li>
+        <li class='recipe-title'>${recipe.label}</li> <span>Health Labels:</span> 
+         <li class='healthLabels'>${recipe.healthLabels}</li>
         </ul>
         `;
       });
