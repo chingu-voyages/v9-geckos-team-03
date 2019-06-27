@@ -5,8 +5,9 @@ const search = document.querySelector('input[type="search"]');
 const searchBtn = document.querySelector('button[type="search"]');
 const loader = document.querySelector('#animated-gif');
 const resultsFor = document.querySelector('.resultsFor')
-// search.addEventListener('search', displayRecipes);
-// searchBtn.addEventListener('click', displayRecipes);
+const modal = document.querySelector('.modal')
+const close = document.querySelector('.close');
+const modalTitle = document.querySelector('.title-details')
 
 function displayRecipes() {
 
@@ -32,8 +33,8 @@ function displayRecipes() {
         output += `
         
         <ul class='recipe' >
-        <img src='${recipe.image}' />
-        <li class='recipe-title'>${recipe.label}</li> <span>Health Labels:</span> 
+        <img onclick="openModal()" class="recipe-img" src='${recipe.image}' />
+        <li onclick="openModal()" class='recipe-title'>${recipe.label}</li> <span>Health Labels:</span> 
          <li class='healthLabels'>${recipe.healthLabels}</li>
         </ul>
         `;
@@ -41,10 +42,25 @@ function displayRecipes() {
       recipe.forEach(rec => rec.style.display = 'flex')
       recipes.innerHTML = output;
       resultsFor.innerHTML = result;
+
     });
 
 }
 
 displayRecipes();
 
-// 1234
+
+function openModal() {
+
+  modal.style.display = "flex";
+}
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+close.addEventListener('click', () => {
+
+  modal.style.display = "none";
+
+})
