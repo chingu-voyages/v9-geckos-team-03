@@ -12,7 +12,6 @@ body {
 }
 
 #formContainer {
-  /* background: rgba(0, 0, 0, 0.3); */
   background-color: white;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
   padding: 10px;
@@ -21,11 +20,11 @@ body {
   margin: auto;
   border: 2px solid rgba(0, 0, 0, 0.3);
   border-radius: 8px;
-  display: none;
+  display: block;
 }
 
 #mainBtn {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
   color: #fab95b;
   padding: 6px 16px;
@@ -87,7 +86,7 @@ body {
   margin-top: 25px;
 }
 
-#mainText {
+.mainText {
   text-align: center;
   font-size: 25pt;
   color: #fab95b;
@@ -171,10 +170,6 @@ label {
   color: #81b441;
 }
 
-.addBtn {
-  text-align: center;
-}
-
 .addBtnDiv {
   text-align: center;
 }
@@ -188,8 +183,29 @@ label {
   font-weight: bold;
   border-radius: 5px;
   border: none;
+  text-align: center;
   cursor: pointer;
   outline: none;
+}
+
+.saveBtnDiv {
+  text-align: center;
+}
+
+.saveBtn {
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+  color: #fab95b;
+  padding: 7px 15px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  display: none;
+  margin-left: 50%;
 }
 
 #recipeContainer {
@@ -204,10 +220,10 @@ label {
 
 .recipeCards {
   width: 250px;
-  height: 190px;
+  height: 140px;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
-  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 25px 8px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   box-sizing: border-box;
   margin: 25px;
@@ -222,6 +238,10 @@ label {
 
 .recipeDetails {
   text-align: center;
+}
+
+.hideDiv {
+  display: none;
 }
 
 .btn{
@@ -268,4 +288,64 @@ label {
   text-decoration: none;
   padding: 5px 10px;
   border-radius: 3px;
+}
+
+/*modal styles*/
+.modalHeadings {
+  color: #81b441;
+  font-size: 23px;
+  font-style: italic;
+}
+
+#modIngredients {
+  color: #666666;
+  font-style: normal;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+#modDirections {
+  color: #666666;
+  font-style: normal;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modalContent {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 3rem;
+  border: 1px solid #888;
+  border-radius: 5px;
+  width: 70%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }

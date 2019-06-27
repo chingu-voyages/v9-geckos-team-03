@@ -1,9 +1,7 @@
 let mainBtn = document.getElementById('mainBtn');
 let backBtn = document.getElementById('backBtn');
 let recipeName = document.getElementById('recipeName');
-let imageUrl = document.getElementById('imageUrl');
-let providerName = document.getElementById('providerName');
-let sourceUrl = document.getElementById('sourceUrl');
+let recipeCategory = document.getElementById('recipeCategory');
 let ingredients = document.getElementById('ingredients');
 let directions = document.getElementById('directions');
 let submitBtn = document.getElementById('submitBtn');
@@ -13,26 +11,32 @@ let ul = document.getElementById("recipeContainer");
 let li = ul.getElementsByTagName('li');
 let deleteCard = document.getElementById('deleteCard');
 let lastid = 0;
+let edit = false;
 
 
 //Function to toggle the 'Add Recipes' button to show and hide the 'Add recipe' form
 function toggleVisibility(){
-    let x = formContainer.style;
-    if(x.display === "none" || x.display === ''){
-        x.display="block";
+    let x = document.querySelector('#formContainer');
+    let xStyle = getComputedStyle(x);
+    if(xStyle.display === "none" || xStyle.display === ''){
+        xStyle.display="block";
     }else {
-        x.display = "none";
+        x.style.display = "none";
     }
 }
 
 //Added click event to close the Add recipe div on clicking the 'x' icon
 closeBtn.addEventListener('click', function() {
     formContainer.style.display = "none";
+    resetForm();
 });
 
 //function to submit the input form
 function formSubmit(){
-  create_cards();
+  if(!edit) {
+    create_cards();
+  }
+  edit = false;
   validateForm();
   toggleVisibility();
   resetForm();
@@ -42,23 +46,20 @@ function formSubmit(){
 //function to create recipe cards
 function create_cards() {
   let recipeNameValue = recipeName.value;
-  // let imageUrlValue = imageUrl.value;
-  let providerValue = providerName.value;
-  let sourceUrlValue = sourceUrl.value;
+  let recipeCatValue = recipeCategory.value;
   let ingredientsValue = ingredients.value;
   let directionsValue = directions.value;
-  let recipeContainer =document.getElementById('recipeContainer')
+  let recipeContainer =document.getElementById('recipeContainer');
+
   let recipeCardContent = document.createElement('li');
       recipeCardContent.classList.add('recipeCards');
       recipeCardContent.setAttribute('id','item'+lastid);
-      // lastid+=1;
       recipeContainer.appendChild(recipeCardContent);
 
   let imgContainer = document.createElement('div');
       recipeCardContent.appendChild(imgContainer);
 
   let recipeImg = document.createElement('img');
-      // recipeImg.src = imageUrlValue;
       recipeImg.src = "./images/recipeCard.jpg";
       imgContainer.appendChild(recipeImg);
 
@@ -67,23 +68,36 @@ function create_cards() {
       recipeCardContent.appendChild(recipeDetailContainer);
 
   let recipeCardName = document.createElement('h3');
+      recipeCardName.setAttribute('id',"rName");
       recipeDetailContainer.appendChild(recipeCardName);
       recipeCardName.innerHTML = recipeNameValue;
 
-  let recipeProvider = document.createElement('p');
-      recipeDetailContainer.appendChild(recipeProvider);
+  let recipeCardCategory = document.createElement('p');
+      recipeCardCategory.setAttribute('id',"rCat");
+      recipeCardCategory.setAttribute('class',"hideDiv");
+      recipeDetailContainer.appendChild(recipeCardCategory);
+      recipeCardCategory.innerHTML = recipeCatValue;
 
-  let italicRecipeProvider = document.createElement('em');
-      recipeProvider.appendChild(italicRecipeProvider);
-      italicRecipeProvider.innerHTML = "Provided by " + providerValue;
+  let recipeCardIngredients = document.createElement('p');
+      recipeCardIngredients.setAttribute('id',"rIngredients");
+      recipeCardIngredients.setAttribute('class',"hideDiv");
+      recipeDetailContainer.appendChild(recipeCardIngredients);
+      recipeCardIngredients.innerHTML = ingredientsValue;
+
+  let recipeCardDirections = document.createElement('p');
+      recipeCardDirections.setAttribute('id',"rDirections");
+      recipeCardDirections.setAttribute('class',"hideDiv");
+      recipeDetailContainer.appendChild(recipeCardDirections);
+      recipeCardDirections.innerHTML = directionsValue;
 
   let buttonContainer = document.createElement('div');
       buttonContainer.classList.add('btn');
       recipeDetailContainer.appendChild(buttonContainer);
 
-  let aFirstTag = document.createElement('a');
+  let aFirstTag = document.createElement('div');
       aFirstTag.setAttribute('href',"");
       aFirstTag.setAttribute('class',"details");
+      aFirstTag.setAttribute('onClick','showModal("'+'item'+lastid+'")');
       aFirstTag.innerHTML = "Details";
       buttonContainer.appendChild(aFirstTag);
 
@@ -96,7 +110,6 @@ function create_cards() {
 
   let deleteDiv = document.createElement('Div');
       deleteDiv.setAttribute('href', '');
-      // deleteDiv.setAttribute('id', 'deleteCard');
       deleteDiv.setAttribute('onClick','removeCard("'+'item'+lastid+'")');
       deleteDiv.classList.add('fas', 'fa-trash-alt', 'delete');
       deleteDiv.setAttribute('target', '');
@@ -108,8 +121,7 @@ function create_cards() {
 //function to reset the form input values
 function resetForm() {
     recipeName.value = '';
-    providerName.value = '';
-    sourceUrl.value = '';
+    recipeCategory.value ='';
     ingredients.value = '';
     directions.value = '';
 }
@@ -186,6 +198,90 @@ backBtn.addEventListener('click', function() {
   searchInput.value = "";
 })
 
+// //Click on details button to open the modal
+function showModal(itemid){
+
+    let modal = document.getElementById("myModal");
+        modal.style.display = "block";
+
+    //Create the modal Content
+    let modalContent = document.createElement('div');
+        modalContent.classList.add("modalContent");
+        modalContent.setAttribute('id',"modalContent");
+        modal.appendChild(modalContent);
+
+    let span = document.createElement('span');
+        span.setAttribute('id',"modClose");
+        modalContent.appendChild(span);
+
+    let iTag = document.createElement('i');
+        iTag.classList.add('fas','fa-times','close');
+        span.appendChild(iTag);
+
+    let h1 = document.createElement('h1');
+        h1.classList.add('mainText');
+        modalContent.appendChild(h1);
+
+    let em = document.createElement('em');
+        em.setAttribute('id',"modRecName");
+        em.innerHTML = '';
+        h1.appendChild(em);
+
+    let h3Ingredients = document.createElement('h3');
+        h3Ingredients.setAttribute('id',"modRecIngredients");
+        h3Ingredients.classList.add('modalHeadings');
+        h3Ingredients.innerHTML = 'Ingredients';
+        modalContent.appendChild(h3Ingredients);
+
+    let pIngredients = document.createElement('p');
+        pIngredients.setAttribute('id',"modIngredients");
+        pIngredients.innerHTML = '';
+        h3Ingredients.appendChild(pIngredients);
+
+    let h3Directions = document.createElement('h3');
+        h3Directions.setAttribute('id',"modRecDirections");
+        h3Directions.classList.add('modalHeadings');
+        h3Directions.innerHTML = 'Directions';
+        modalContent.appendChild(h3Directions);
+
+    let pDirections = document.createElement('p');
+        pDirections.setAttribute('id',"modDirections");
+        pDirections.innerHTML = '';
+        h3Directions.appendChild(pDirections);
+
+
+        const lis = [...document.querySelectorAll('#recipeContainer li')];
+
+        let item = document.getElementById(itemid);
+
+        //let em = document.getElementById('modRecName');
+        em.innerHTML = item.getElementsByTagName("h3")[0].innerHTML;
+
+        let pModIngredients = document.getElementById('modIngredients')
+        pModIngredients.innerHTML = item.getElementsByClassName("hideDiv")[1].innerHTML;
+
+        let pModDirections = document.getElementById('modDirections')
+        pModDirections.innerHTML = item.getElementsByClassName("hideDiv")[2].innerHTML;
+
+        // Get the <span> element that closes the modal
+          let modCloseBtn = document.getElementById("modClose");
+              modCloseBtn.addEventListener('click', function() {
+                  modal.style.display = "none";
+                  myModal.removeChild(modalContent);
+              });
+
+        // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function(event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          }
+
+    return false;
+}
+
+
+
 //Click on deleteIcon to delete a recipe card
 function removeCard(itemid){
   //console.log('clicked');
@@ -198,3 +294,31 @@ function removeCard(itemid){
       })
     }
 }
+
+//click on edit icon to edit the recipe cards
+function editCard(itemid) {
+  edit = true;
+  formContainer.style.display = 'block';
+  let saveBtn = document.getElementById('submitSaveBtn');
+  let addBtn = document.getElementById('submitBtn');
+    saveBtn.style.display = 'block';
+    submitBtn.style.display = 'none';
+
+  const items = [...document.querySelectorAll('#recipeContainer li')];
+  let tab = [], liIndex;
+  let item = document.getElementById(itemid);
+
+    //Getting the values back to form container
+    recipeName.value = item.getElementsByTagName("h3")[0].innerHTML;
+    recipeCategory.value = item.getElementsByClassName("hideDiv")[0].innerHTML;
+    ingredients.value = item.getElementsByClassName("hideDiv")[1].innerHTML;
+    directions.value = item.getElementsByClassName("hideDiv")[2].innerHTML;
+
+    //Seeting values on save back to recipe card
+    saveBtn.addEventListener('click', function() {
+        item.getElementsByTagName("h3")[0].innerHTML = recipeName.value;
+        item.getElementsByClassName("hideDiv")[0].innerHTML= recipeCategory.value;
+        item.getElementsByClassName("hideDiv")[1].innerHTML= ingredients.value;
+        item.getElementsByClassName("hideDiv")[2].innerHTML = directions.value;
+    })
+} 
