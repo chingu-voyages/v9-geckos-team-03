@@ -12,17 +12,23 @@ let li = ul.getElementsByTagName('li');
 let deleteCard = document.getElementById('deleteCard');
 let lastid = 0;
 let edit = false;
+let saveItemid = "";
 
 
 //Function to toggle the 'Add Recipes' button to show and hide the 'Add recipe' form
 function toggleVisibility(){
-    let x = document.querySelector('#formContainer');
-    let xStyle = getComputedStyle(x);
-    if(xStyle.display === "none" || xStyle.display === ''){
-        xStyle.display="block";
-    }else {
-        x.style.display = "none";
-    }
+
+  let saveBtn = document.getElementById('submitSaveBtn');
+  let addBtn = document.getElementById('submitBtn');
+      saveBtn.style.display = 'none';
+      submitBtn.style.display = 'block';
+
+    let x = formContainer.style;
+        if(x.display !== "none" ){
+            x.display="none";
+        }else {
+            x.display = "block";
+        }
 }
 
 //Added click event to close the Add recipe div on clicking the 'x' icon
@@ -168,10 +174,10 @@ function clickSearch() {
 function searchRecipes() {
   // Declare variables
   let input, filter, ul, li, h3, i, txtValue;
-  input = document.getElementById('searchInput');
-  filter = input.value.toUpperCase();
-  ul = document.getElementById("recipeContainer");
-  li = ul.getElementsByTagName('li');
+      input = document.getElementById('searchInput');
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("recipeContainer");
+      li = ul.getElementsByTagName('li');
 
   // Loop through all list items, and hide those who don't match the search query
   for (i = 0; i < li.length; i++) {
@@ -254,14 +260,13 @@ function showModal(itemid){
 
         let item = document.getElementById(itemid);
 
-        //let em = document.getElementById('modRecName');
-        em.innerHTML = item.getElementsByTagName("h3")[0].innerHTML;
+            em.innerHTML = item.getElementsByTagName("h3")[0].innerHTML;
 
         let pModIngredients = document.getElementById('modIngredients')
-        pModIngredients.innerHTML = item.getElementsByClassName("hideDiv")[1].innerHTML;
+            pModIngredients.innerHTML = item.getElementsByClassName("hideDiv")[1].innerHTML;
 
         let pModDirections = document.getElementById('modDirections')
-        pModDirections.innerHTML = item.getElementsByClassName("hideDiv")[2].innerHTML;
+            pModDirections.innerHTML = item.getElementsByClassName("hideDiv")[2].innerHTML;
 
         // Get the <span> element that closes the modal
           let modCloseBtn = document.getElementById("modClose");
@@ -297,28 +302,28 @@ function removeCard(itemid){
 
 //click on edit icon to edit the recipe cards
 function editCard(itemid) {
-  edit = true;
-  formContainer.style.display = 'block';
+      edit = true;
+      formContainer.style.display = 'block';
   let saveBtn = document.getElementById('submitSaveBtn');
   let addBtn = document.getElementById('submitBtn');
-    saveBtn.style.display = 'block';
-    submitBtn.style.display = 'none';
+      saveBtn.style.display = 'block';
+      submitBtn.style.display = 'none';
 
-  const items = [...document.querySelectorAll('#recipeContainer li')];
-  let tab = [], liIndex;
   let item = document.getElementById(itemid);
+      saveItemid = itemid;
 
     //Getting the values back to form container
     recipeName.value = item.getElementsByTagName("h3")[0].innerHTML;
     recipeCategory.value = item.getElementsByClassName("hideDiv")[0].innerHTML;
     ingredients.value = item.getElementsByClassName("hideDiv")[1].innerHTML;
     directions.value = item.getElementsByClassName("hideDiv")[2].innerHTML;
-
-    //Seeting values on save back to recipe card
-    saveBtn.addEventListener('click', function() {
-        item.getElementsByTagName("h3")[0].innerHTML = recipeName.value;
-        item.getElementsByClassName("hideDiv")[0].innerHTML= recipeCategory.value;
-        item.getElementsByClassName("hideDiv")[1].innerHTML= ingredients.value;
-        item.getElementsByClassName("hideDiv")[2].innerHTML = directions.value;
-    })
 } 
+
+//Setting values on clicking save button back to recipe card
+function saveForm(){
+    let item = document.getElementById(saveItemid);
+          item.getElementsByTagName("h3")[0].innerHTML = recipeName.value;
+          item.getElementsByClassName("hideDiv")[0].innerHTML= recipeCategory.value;
+          item.getElementsByClassName("hideDiv")[1].innerHTML= ingredients.value;
+          item.getElementsByClassName("hideDiv")[2].innerHTML = directions.value;
+}
