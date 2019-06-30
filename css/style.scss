@@ -14,6 +14,7 @@ body {
   background-color: #eee;
   color: #636161;
   text-align: center;
+  min-height: 100%;
   // height: 2000px; //to delete after !!
 }
 
@@ -101,7 +102,7 @@ header {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
 
-    & > * {
+    &>* {
       background: $white;
       display: flex;
       flex-direction: column;
@@ -239,7 +240,7 @@ button[type='search'] {
       display: flex;
       flex-direction: column;
 
-      & > * {
+      &>* {
         margin-bottom: 1rem;
       }
     }
@@ -284,6 +285,7 @@ button[type='search'] {
   font-family: 'Amaticbold', cursive;
   font-weight: bold;
 }
+
 .modal {
   display: none;
   background: rgba(2, 2, 20, 0.22);
@@ -292,9 +294,11 @@ button[type='search'] {
   height: 100%;
   justify-content: center;
   align-items: center;
-  & > * {
+
+  &>* {
     color: orange;
   }
+
   .modal-content {
     display: flex;
     flex-direction: column;
@@ -309,16 +313,19 @@ button[type='search'] {
     animation-name: animatetop;
     animation-duration: 0.4s;
   }
+
   @keyframes animatetop {
     from {
       top: -300px;
       opacity: 0;
     }
+
     to {
       top: 0;
       opacity: 1;
     }
   }
+
   .close {
     position: absolute;
     top: 0;
@@ -328,9 +335,41 @@ button[type='search'] {
     height: 20px;
     top: 0;
     margin-top: -20px;
+
     &:focus,
     &:hover {
       color: black;
     }
+  }
+}
+
+footer {
+  clear: both;
+  position: relative;
+  height: 8rem;
+  margin-top: 5rem;
+  width: 100%;
+  background-color: rgba(2, 2, 20, 0.22);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 2px solid #5dc2d7;
+
+  .icons {
+    display: flex;
+    justify-content: space-around;
+    width: 200px;
+  }
+
+  svg {
+    width: 30px;
+    cursor: pointer;
+  }
+
+  p {
+    color: white;
+    font-size: 0.8rem;
+    font-family: 'Amaticbold', cursive;
   }
 }
