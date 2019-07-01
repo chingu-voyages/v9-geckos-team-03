@@ -221,7 +221,8 @@ header strong {
   background-repeat: no-repeat;
 }
 
-.recipesApi {
+.recipesApi,
+#displaySomeRecipes {
   width: 70%;
   margin: auto;
   display: -ms-grid;
@@ -232,7 +233,8 @@ header strong {
   margin-top: 2rem;
 }
 
-.recipesApi .recipe {
+.recipesApi .recipe,
+#displaySomeRecipes .recipe {
   background: #fff;
   border-radius: 5px;
   display: -webkit-box;
@@ -245,7 +247,8 @@ header strong {
   padding: 1rem;
 }
 
-.recipesApi .recipe .recipe-title {
+.recipesApi .recipe .recipe-title,
+#displaySomeRecipes .recipe .recipe-title {
   color: #77d205;
   font-weight: bold;
   font-size: 1.2rem;
@@ -254,20 +257,24 @@ header strong {
   transition: color 0.3s ease;
 }
 
-.recipesApi .recipe .recipe-title:hover {
+.recipesApi .recipe .recipe-title:hover,
+#displaySomeRecipes .recipe .recipe-title:hover {
   color: #fab95b;
 }
 
-.recipesApi .recipe img {
+.recipesApi .recipe img,
+#displaySomeRecipes .recipe img {
   cursor: pointer;
 }
 
-.recipesApi .recipe span {
+.recipesApi .recipe span,
+#displaySomeRecipes .recipe span {
   font-weight: bold;
   color: #bd4141;
 }
 
-.recipesApi .recipe .healthLabels {
+.recipesApi .recipe .healthLabels,
+#displaySomeRecipes .recipe .healthLabels {
   font-size: 0.9rem;
 }
 
@@ -475,12 +482,13 @@ button[type='search'] {
 }
 
 footer {
-  clear: both;
-  position: relative;
   height: 8rem;
-  margin-top: 5rem;
+  /*   bottom: 0;
+  margin-bottom: -10rem;
+  margin-top: 5rem; */
   width: 100%;
   background-color: rgba(2, 2, 20, 0.22);
+  margin-top: 5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -515,5 +523,13 @@ footer p {
   color: white;
   font-size: 0.8rem;
   font-family: 'Amaticbold', cursive;
+}
+
+.searchIn form {
+  margin-top: 3rem;
+}
+
+#animated-gif {
+  cursor: none;
 }
 /*# sourceMappingURL=style.css.map */

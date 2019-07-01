@@ -15,6 +15,7 @@ body {
   color: #636161;
   text-align: center;
   min-height: 100%;
+  // position: relative;
   // height: 2000px; //to delete after !!
 }
 
@@ -102,7 +103,7 @@ header {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
 
-    &>* {
+    & > * {
       background: $white;
       display: flex;
       flex-direction: column;
@@ -141,7 +142,8 @@ header {
   }
 }
 
-.recipesApi {
+.recipesApi,
+#displaySomeRecipes {
   width: 70%;
   margin: auto;
   display: grid;
@@ -240,7 +242,7 @@ button[type='search'] {
       display: flex;
       flex-direction: column;
 
-      &>* {
+      & > * {
         margin-bottom: 1rem;
       }
     }
@@ -295,7 +297,7 @@ button[type='search'] {
   justify-content: center;
   align-items: center;
 
-  &>* {
+  & > * {
     color: orange;
   }
 
@@ -344,12 +346,15 @@ button[type='search'] {
 }
 
 footer {
-  clear: both;
-  position: relative;
+  // clear: both;
+  // position: absolute;
   height: 8rem;
-  margin-top: 5rem;
+  /*   bottom: 0;
+  margin-bottom: -10rem;
+  margin-top: 5rem; */
   width: 100%;
   background-color: rgba(2, 2, 20, 0.22);
+  margin-top: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -372,4 +377,12 @@ footer {
     font-size: 0.8rem;
     font-family: 'Amaticbold', cursive;
   }
+}
+.searchIn {
+  form {
+    margin-top: 3rem;
+  }
+}
+#animated-gif {
+  cursor: none;
 }

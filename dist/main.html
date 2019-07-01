@@ -9,7 +9,7 @@
     integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700 | Open+Sans&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/style.css" />
-  <title>Recipe App</title>
+  <title>Chef Maker</title>
 </head>
 
 <body>
@@ -17,6 +17,7 @@
     <ul>
       <li class="pd"><a href="#">Home</a></li>
       <li class="pd"><a href="/dist/login.html">Log in</a></li>
+      <li class="pd"><a href="/addRecipes.html">My Recipes</a></li>
       <form class="form" action="search.html" method='GET'>
         <input class=" pd" type="search" name='search' placeholder="Search For A Recipe... " />
         <button class="btn pd" type="search" onclick="displayRecipes()">Search</button>
@@ -24,7 +25,7 @@
     </ul>
   </nav>
   <header>
-    <h1 class="title mg-y"><i class="fas fa-pizza-slice"></i> RECIPE APP</h1>
+    <h1 class="title mg-y"><i class="fas fa-pizza-slice"></i> Chef Maker</h1>
     <p class="paragraph mg-y">
       Are You Passionate About Cooking? This Is The Best Place For You .
     </p>
@@ -62,7 +63,7 @@
   </section>
   <h1 id="recipes" class="mg-y banner">Recipes</h1>
 
-  <div class=" recipesApi">
+  <div id='displaySomeRecipes'>
     <div class="recipe">
 
       <img src="/dist/img/Infinity-1s-200px.gif" id="animated-gif" style="display:none" />
