@@ -289,15 +289,11 @@ function showModal(itemid){
 
 //Click on deleteIcon to delete a recipe card
 function removeCard(itemid){
-  //console.log('clicked');
-  const lis = [...document.querySelectorAll('#recipeContainer li')];
-  let item = document.getElementById(itemid);
 
-    for (const li of lis) {
-      li.addEventListener('click', function() {
-        li.parentNode.removeChild(item);
-      })
-    }
+  let item = document.getElementById(itemid);
+  let recipeContainer = document.getElementById('recipeContainer');
+
+      recipeContainer.removeChild(item);
 }
 
 //click on edit icon to edit the recipe cards
