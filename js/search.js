@@ -35,8 +35,6 @@ function displayRecipes() {
                 hits.forEach(({
                     recipe
                 }) => {
-                    // console.log(recipe)
-                    // result = `Results For '${value}'`
                     output += `
         
         <ul class='recipe' >
@@ -48,12 +46,9 @@ function displayRecipes() {
                 });
                 recipe.forEach(rec => rec.style.display = 'flex')
                 recipes.innerHTML = output;
-                // resultsFor.innerHTML = result;
-
             });
-    } else(recipes.innerHTML = 'Please search for a recipe')
+    } else(recipes.innerHTML = 'Please search for a recipe');
 }
-
 displayRecipes();
 
 

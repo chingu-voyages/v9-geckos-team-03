@@ -27,12 +27,25 @@
   font-weight: 100;
 }
 
+@media (max-width: 615px) {
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+}
+
 .title-second {
   font-size: 2rem;
 }
 
 .paragraph {
   width: 50%;
+}
+
+@media (max-width: 615px) {
+  .paragraph {
+    width: 100%;
+  }
 }
 
 .mg-y {
@@ -73,6 +86,7 @@ body {
   color: #636161;
   text-align: center;
   min-height: 100%;
+  position: relative;
 }
 
 a {
@@ -97,6 +111,15 @@ nav {
   position: absolute;
   z-index: 99;
   width: 100%;
+  background: rgba(2, 2, 20, 0.22);
+}
+
+@media (max-width: 615px) {
+  nav {
+    display: none;
+    height: 100%;
+    background: rgba(2, 2, 20, 0.5);
+  }
 }
 
 nav ul {
@@ -107,16 +130,43 @@ nav ul {
       -ms-flex-pack: start;
           justify-content: flex-start;
   border-radius: 3px;
-  background: rgba(2, 2, 20, 0.22);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (max-width: 615px) {
+  nav ul {
+    width: 100%;
+    position: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: center;
+    height: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 nav ul li a {
   font-size: 1.2rem;
   -webkit-transition: color 0.3s ease-in-out;
   transition: color 0.3s ease-in-out;
+}
+
+@media (max-width: 615px) {
+  nav ul li a {
+    font-size: 3rem;
+  }
 }
 
 nav ul li a:hover {
@@ -147,8 +197,21 @@ header {
   position: relative;
 }
 
+@media (max-width: 615px) {
+  header {
+    height: auto;
+  }
+}
+
 header p {
   font-size: 2rem;
+  font-weight: bold;
+}
+
+@media (max-width: 615px) {
+  header p {
+    font-size: 1.5rem;
+  }
 }
 
 header .fa-pizza-slice {
@@ -156,10 +219,23 @@ header .fa-pizza-slice {
   font-size: 3rem;
 }
 
+@media (max-width: 615px) {
+  header .fa-pizza-slice {
+    font-size: 2rem;
+  }
+}
+
 header strong {
   color: #77d205;
   font-size: 2rem;
   font-weight: 100;
+}
+
+@media (max-width: 600px) {
+  header strong {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
 }
 
 .categories-container {
@@ -175,6 +251,13 @@ header strong {
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
+}
+
+@media (max-width: 500px) {
+  .categories-container .categories {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
 }
 
 .categories-container .categories > * {
@@ -288,6 +371,12 @@ button[type='search'] {
 nav form {
   position: absolute;
   right: 3rem;
+}
+
+@media (max-width: 615px) {
+  nav form {
+    display: none;
+  }
 }
 
 input[type='search'] {
@@ -531,5 +620,129 @@ footer p {
 
 #animated-gif {
   cursor: none;
+}
+
+.svg a {
+  color: black;
+}
+
+.hamburger {
+  position: absolute;
+  top: 25px;
+  margin-bottom: 10px;
+  left: 40px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+  z-index: 99;
+}
+
+@media (max-width: 615px) {
+  .hamburger {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.hamburger:focus {
+  outline: none;
+}
+
+.hamburger:hover {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.hamburger:hover .line:nth-child(1) {
+  width: 100%;
+}
+
+.hamburger:hover .line:nth-child(2) {
+  width: 100%;
+}
+
+.hamburger:hover .line:nth-child(3) {
+  width: 100%;
+}
+
+.hamburger.active .line {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.hamburger.active .line:nth-child(1) {
+  width: 100%;
+  -webkit-transform: translateY(250%) rotate(45deg);
+          transform: translateY(250%) rotate(45deg);
+}
+
+.hamburger.active .line:nth-child(2) {
+  opacity: 0;
+  width: 100%;
+}
+
+.hamburger.active .line:nth-child(3) {
+  width: 100%;
+  -webkit-transform: translateY(-250%) rotate(-45deg);
+          transform: translateY(-250%) rotate(-45deg);
+}
+
+.hamburger .line {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  height: 5px;
+  margin: 5px 0;
+  border-radius: 5px;
+  background: #5dc2d7;
+}
+
+.hamburger .line:nth-child(1) {
+  width: 100%;
+}
+
+.hamburger .line:nth-child(2) {
+  width: 80%;
+}
+
+.hamburger .line:nth-child(3) {
+  width: 60%;
+}
+
+.closeNavButton {
+  display: none;
+  font-size: 3rem;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 1rem;
+}
+
+.closeNavButton:hover {
+  color: #5dc2d7;
+}
+
+@media (max-width: 615px) {
+  .closeNavButton {
+    display: block;
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -15,7 +15,7 @@ body {
   color: #636161;
   text-align: center;
   min-height: 100%;
-  // position: relative;
+  position: relative;
   // height: 2000px; //to delete after !!
 }
 
@@ -41,18 +41,40 @@ nav {
   position: absolute;
   z-index: 99;
   width: 100%;
+  background: rgba(2, 2, 20, 0.22);
+
+  @media(max-width:615px) {
+    display: none;
+    height: 100%;
+    background: rgba(2, 2, 20, 0.5);
+  }
 
   ul {
     display: flex;
     justify-content: flex-start;
     border-radius: 3px;
-    background: rgba(2, 2, 20, 0.22);
+    // background: rgba(2, 2, 20, 0.22);
     align-items: center;
+
+    @media(max-width:615px) {
+      width: 100%;
+      position: fixed;
+      display: flex;
+      text-align: center;
+      height: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 
     li {
       a {
         font-size: 1.2rem;
         transition: color 0.3s ease-in-out;
+
+        @media(max-width:615px) {
+          font-size: 3rem;
+        }
 
         &:hover {
           color: $orange;
@@ -76,19 +98,39 @@ header {
   text-align: center;
   position: relative;
 
+  @media(max-width:615px) {
+    height: auto;
+  }
+
+
   p {
     font-size: 2rem;
+    font-weight: bold;
+
+    @media(max-width:615px) {
+      font-size: 1.5rem;
+
+    }
   }
 
   .fa-pizza-slice {
     color: $orange;
     font-size: 3rem;
+
+    @media(max-width:615px) {
+      font-size: 2rem;
+    }
   }
 
   strong {
     color: $primary-color;
     font-size: 2rem;
     font-weight: 100;
+
+    @media(max-width:600px) {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
   }
 }
 
@@ -103,7 +145,11 @@ header {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
 
-    & > * {
+    @media (max-width:500px) {
+      grid-template-columns: 1fr;
+    }
+
+    &>* {
       background: $white;
       display: flex;
       flex-direction: column;
@@ -195,6 +241,11 @@ button[type='search'] {
 nav form {
   position: absolute;
   right: 3rem;
+
+  @media(max-width:615px) {
+    display: none;
+
+  }
 }
 
 input[type='search'] {
@@ -242,7 +293,8 @@ button[type='search'] {
       display: flex;
       flex-direction: column;
 
-      & > * {
+
+      &>* {
         margin-bottom: 1rem;
       }
     }
@@ -252,6 +304,7 @@ button[type='search'] {
       outline: none;
       border: 0;
       padding: 0.6rem;
+
     }
 
     button {
@@ -297,7 +350,7 @@ button[type='search'] {
   justify-content: center;
   align-items: center;
 
-  & > * {
+  &>* {
     color: orange;
   }
 
@@ -378,11 +431,122 @@ footer {
     font-family: 'Amaticbold', cursive;
   }
 }
+
 .searchIn {
   form {
     margin-top: 3rem;
   }
 }
+
 #animated-gif {
   cursor: none;
+}
+
+.svg a {
+  color: black
+}
+
+.hamburger {
+  position: absolute;
+  top: 25px;
+  margin-bottom: 10px;
+  left: 40px;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  display: none;
+  z-index: 99;
+
+  @media(max-width:615px) {
+    display: flex;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+
+    .line {
+      &:nth-child(1) {
+        width: 100%;
+      }
+
+      &:nth-child(2) {
+        width: 100%;
+      }
+
+      &:nth-child(3) {
+        width: 100%;
+      }
+    }
+  }
+
+  &.active {
+    .line {
+      transition: all 0.2s ease-in-out;
+
+      &:nth-child(1) {
+        width: 100%;
+        transform: translateY(250%) rotate(45deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+        width: 100%;
+      }
+
+      &:nth-child(3) {
+        width: 100%;
+        transform: translateY(-250%) rotate(-45deg);
+      }
+    }
+  }
+
+  .line {
+    transition: all 0.2s ease-in-out;
+    height: 5px;
+    margin: 5px 0;
+    border-radius: 5px;
+    background: $blue;
+
+    &:nth-child(1) {
+      width: 100%;
+    }
+
+    &:nth-child(2) {
+      width: 80%;
+    }
+
+    &:nth-child(3) {
+      width: 60%;
+    }
+  }
+}
+
+.closeNavButton {
+  display: none;
+  font-size: 3rem;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 1rem;
+
+  &:hover {
+    color: $blue;
+  }
+
+  @media(max-width: 615px) {
+    display: block;
+  }
+
 }

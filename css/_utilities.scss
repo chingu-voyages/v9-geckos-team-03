@@ -33,6 +33,11 @@ $blue : #5dc2d7;
     font-family: 'Amaticbold', cursive;
     font-weight: 100;
 
+    @media(max-width:615px) {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
     &-second {
         font-size: 2rem;
     }
@@ -41,6 +46,10 @@ $blue : #5dc2d7;
 .paragraph {
 
     width: 50%;
+
+    @media(max-width:615px) {
+        width: 100%;
+    }
 
 }
 
