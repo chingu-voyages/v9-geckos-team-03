@@ -566,3 +566,11 @@ footer {
   font-size: 1rem;
   color: black;
 }
+
+.modal .modal-content {
+  @media(max-width:615px) {
+    height: fit-content;
+    width: fit-content;
+    margin: 10px;
+  }
+}

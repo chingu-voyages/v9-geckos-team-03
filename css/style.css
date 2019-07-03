@@ -760,4 +760,16 @@ footer p {
   font-size: 1rem;
   color: black;
 }
+
+@media (max-width: 615px) {
+  .modal .modal-content {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 10px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
