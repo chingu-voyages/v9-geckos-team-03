@@ -745,4 +745,19 @@ footer p {
     display: block;
   }
 }
+
+.prg-details,
+.title-details {
+  margin: 10px;
+}
+
+.title-details {
+  font-size: 1.5rem;
+  color: #5dc2d7;
+}
+
+.prg-details {
+  font-size: 1rem;
+  color: black;
+}
 /*# sourceMappingURL=style.css.map */

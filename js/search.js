@@ -6,7 +6,8 @@ const loader = document.querySelector('#animated-gif');
 const resultsFor = document.querySelector('.resultsFor')
 const modal = document.querySelector('.modal')
 const close = document.querySelector('.close');
-const modalTitle = document.querySelector('.title-details')
+const modalTitle = document.querySelector('.title-details');
+const prgDetails = document.querySelector('.prg-details');
 const footer = document.querySelector('footer')
 const arrowBack = document.querySelector('.back')
 const displaySomeRecipes = document.querySelector('#displaySomeRecipes')
@@ -36,10 +37,13 @@ function displayRecipes() {
                     recipe
                 }) => {
                     output += `
-        
         <ul class='recipe' >
-        <img onclick="openModal()" class="recipe-img" src='${recipe.image}' />
-        <li onclick="openModal()" class='recipe-title'>${recipe.label}</li> <span>Health Labels:</span> 
+        <img onclick="openModal('${
+            recipe.label
+          }','${recipe.ingredientLines}')" class="recipe-img" src='${recipe.image}' />
+        <li onclick="openModal('${
+            recipe.label
+          }','${recipe.ingredientLines}')" class='recipe-title'>${recipe.label}</li> <span>Health Labels:</span> 
          <li class='healthLabels'>${recipe.healthLabels}</li>
         </ul>
         `;
@@ -52,8 +56,18 @@ function displayRecipes() {
 displayRecipes();
 
 
-function openModal() {
-    modal.style.display = "flex";
+function openModal(title, ingredients) {
+    console.log(title, ingredients)
+    modalTitle.innerHTML = title;
+    prgDetails.innerHTML = ingredients;
+    fetch(
+            `https://api.edamam.com/search?q=pizza&app_id=80010e5d&app_key=a840721c6ce80a1b19aa39f1984cb906&label=${title}`
+        )
+        .then(resp => resp.json())
+        .then(hits => {
+            console.log(hits);
+        })
+    modal.style.display = 'flex';
 }
 window.onclick = function (event) {
     if (event.target == modal) {
