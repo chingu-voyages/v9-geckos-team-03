@@ -1,0 +1,353 @@
+body {
+  background-image: url("./images/headBg.jpeg");
+}
+
+#headContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin: 30px 10px;
+
+}
+
+#formContainer {
+  background-color: white;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  padding-bottom: 20px;
+  width: 65%;
+  margin: auto;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  display: block;
+}
+
+#mainBtn {
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+  color: #fab95b;
+  padding: 6px 16px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+#backBtn {
+  font-size: 18px;
+  cursor: pointer;
+  padding: 6px 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+  color: #fab95b;
+  display: none;
+}
+
+.search-container {
+  text-align: center;
+}
+
+.search-container input[type=text] {
+  width: 70%;
+  padding: 6px;
+  font-size: 17px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+}
+
+.search-container button {
+  padding: 6px 10px;
+  margin-left: -5px;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+  color: #81b441;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  border-radius: 2px;
+}
+
+ .search-container button:hover {
+  background: #ccc;
+}
+
+#hrStyle {
+  width: 100%;
+  margin-top: 25px;
+}
+
+.mainText {
+  text-align: center;
+  font-size: 25pt;
+  color: #fab95b;
+  margin-top: -20px;
+  margin-left: 50px;
+}
+
+#closeBtn {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.6);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+#closeBtn:hover {
+  color: #fab95b;
+}
+
+.labelContainer {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center
+}
+
+.labelName {
+  margin-left: 45px;
+}
+
+.labelTextArea {
+  margin-left: 5px;
+}
+
+.labelCategory {
+  margin-left: 18px;
+}
+
+label {
+  color: #696969;
+  font-size: 17px;
+  font-weight: 400;
+  margin-top: -10px;
+  margin-right: 2%;
+  font-style: italic;
+}
+
+.inputStyle {
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 13px;
+  color: #81b441;
+  width: 50%;
+  height: 20px;
+  padding: 8px;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  outline: none;
+  margin-left: 5px;
+}
+
+.inputStyle1 {
+  width: 50.5%;
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 13px;
+  color: #81b441;
+  height: 20px;
+  padding: 8px;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  outline: none;
+  margin-left: 8px;
+}
+
+.inputStyle::placeholder {
+  color: #81b441;
+}
+
+.inputStyle1::placeholder {
+  color: #81b441;
+}
+
+.addBtnDiv {
+  text-align: center;
+  margin: auto;
+}
+
+.addBtn {
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+  color: #fab95b;
+  padding: 7px 10px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  margin: auto;
+}
+
+.saveBtnDiv {
+  text-align: center;
+}
+
+.saveBtn {
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+  color: #fab95b;
+  padding: 7px 15px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  display: none;
+  margin-left: 50%;
+}
+
+#recipeContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 0;
+}
+
+.recipeCards {
+  width: 250px;
+  height: 140px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  box-shadow: 0 25px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin: 25px;
+}
+
+.recipeCards img {
+  width: 250px;
+  height: 40px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.recipeDetails {
+  text-align: center;
+}
+
+.hideDiv {
+  display: none;
+}
+
+.btn{
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  color: white;
+  height: 35px;
+  padding:20px;
+  padding-bottom: 0px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.details {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 60px;
+  height: 20px;
+  color: #fab95b;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  margin-top: -5px;
+}
+
+.edit {
+  color: #81b441;
+  margin-left: 6rem;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.delete {
+  color: #fab95b;
+  margin-left: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.recipeUrl {
+  background-color: #81b441;
+  width: 20px;
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+/*modal styles*/
+.modalHeadings {
+  color: #81b441;
+  font-size: 23px;
+  font-style: italic;
+}
+
+#modIngredients {
+  color: #666666;
+  font-style: normal;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+#modDirections {
+  color: #666666;
+  font-style: normal;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content/Box */
+.modalContent {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 3rem;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  width: 50%; 
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
