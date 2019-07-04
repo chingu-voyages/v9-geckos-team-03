@@ -475,6 +475,10 @@ button[type='search'] {
   color: #00b241;
 }
 
+#signIn {
+  display: none;
+}
+
 .back {
   display: block;
   position: absolute;
