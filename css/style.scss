@@ -188,6 +188,11 @@ header {
   }
 }
 
+#displaySomeRecipes {
+  background: url(../dist/img/headBg.jpeg);
+
+}
+
 .recipesApi,
 #displaySomeRecipes {
   width: 70%;
@@ -565,6 +570,10 @@ footer {
 .prg-details {
   font-size: 1rem;
   color: black;
+}
+
+#searchBody {
+  background: url(../dist/img/headBg.jpeg);
 }
 
 .modal .modal-content {
