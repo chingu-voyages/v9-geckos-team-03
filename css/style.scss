@@ -16,7 +16,6 @@ body {
   text-align: center;
   min-height: 100%;
   position: relative;
-  // height: 2000px; //to delete after !!
 }
 
 a {
@@ -46,14 +45,13 @@ nav {
   @media(max-width:615px) {
     display: none;
     height: 100%;
-    background: rgba(2, 2, 20, 0.5);
+    background: rgba(2, 2, 4, 0.92);
   }
 
   ul {
     display: flex;
     justify-content: flex-start;
     border-radius: 3px;
-    // background: rgba(2, 2, 20, 0.22);
     align-items: center;
 
     @media(max-width:615px) {
@@ -73,7 +71,7 @@ nav {
         transition: color 0.3s ease-in-out;
 
         @media(max-width:615px) {
-          font-size: 3rem;
+          font-size: 2rem;
         }
 
         &:hover {
@@ -154,7 +152,6 @@ header {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      // align-items: center;
       height: 350px;
       box-shadow: 0 10px 6px -6px #777;
     }
@@ -404,12 +401,8 @@ button[type='search'] {
 }
 
 footer {
-  // clear: both;
-  // position: absolute;
+
   height: 8rem;
-  /*   bottom: 0;
-  margin-bottom: -10rem;
-  margin-top: 5rem; */
   width: 100%;
   background-color: rgba(2, 2, 20, 0.22);
   margin-top: 5rem;
@@ -581,5 +574,13 @@ footer {
     height: fit-content;
     width: fit-content;
     margin: 10px;
+  }
+}
+
+.searchMobile {
+  display: none;
+
+  @media(max-width:615px) {
+    display: block;
   }
 }

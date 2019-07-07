@@ -14,7 +14,7 @@ const displaySomeRecipes = document.querySelector('#displaySomeRecipes');
 const nav = document.querySelector('nav');
 const closeNavButton = document.querySelector('.closeNavButton');
 
-// const modal = document.querySelector('.tst')
+
 
 loader.style.display = 'block';
 fetch(
