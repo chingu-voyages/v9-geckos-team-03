@@ -25,16 +25,15 @@ fetch(
     let output = '';
 
     hits.hits.forEach(hits => {
-      console.log(hits.recipe)
       output += `
-   
+
       <ul class='recipe' >
       <img onclick="openModal('${
         hits.recipe.label
       }','${hits.recipe.ingredientLines}')"  class="recipe-img" src='${hits.recipe.image}' />
       <li onclick="openModal('${hits.recipe.label}','${hits.recipe.ingredientLines}')" class='recipe-title'>${
         hits.recipe.label
-      }</li> <span>Health Labels:</span> 
+      }</li> <span>Health Labels:</span>
        <li class='healthLabels'>${hits.recipe.healthLabels}</li>
       </ul>
       `;
