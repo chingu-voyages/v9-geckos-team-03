@@ -407,3 +407,49 @@ footer p {
   font-size: 0.8rem;
   font-family: 'Amaticbold', cursive;
 }
+
+@media only screen and (max-width: 1100px) {
+  #formContainer {
+    width: 80%;
+    margin-top: 200px;
+    padding-bottom: 40px;
+    height: 45vh;
+  }
+  .labelContainer {
+    flex-direction: column;
+  }
+  #mainBtn {
+    padding: 2px;
+    width: 100px;
+    font-size: 12px;
+  }
+  .mainText {
+    font-size: 20pt;
+    margin-left: 0px;
+    margin-top: 10px;
+    padding-bottom: 30px;
+  }
+  .labelName {
+    margin-left: 33px;
+    padding-bottom: 5px;
+  }
+  .labelCategory {
+    margin-left: 33px;
+    padding-bottom: 5px;
+  }
+  .labelTextArea {
+    margin-left: 30px;
+    padding-bottom: 5px;
+  }
+  .inputStyle {
+    height: 30px;
+    margin-bottom: 1.5rem;
+  }
+  .inputStyle1 {
+    height: 50px;
+  }
+  .addBtnDiv {
+    margin-top: 20px;
+  }
+}
+}
