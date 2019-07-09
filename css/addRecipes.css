@@ -411,8 +411,9 @@ footer p {
 @media only screen and (max-width: 1100px) {
   #formContainer {
     width: 80%;
-    margin-top: 50px;
+    margin-top: 200px;
     padding-bottom: 40px;
+    height: 45vh;
   }
   .labelContainer {
     flex-direction: column;
@@ -426,6 +427,7 @@ footer p {
     font-size: 20pt;
     margin-left: 0px;
     margin-top: 10px;
+    padding-bottom: 30px;
   }
   .labelName {
     margin-left: 33px;
@@ -449,4 +451,5 @@ footer p {
   .addBtnDiv {
     margin-top: 20px;
   }
+}
 }
