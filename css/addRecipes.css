@@ -408,26 +408,52 @@ footer p {
   font-family: 'Amaticbold', cursive;
 }
 
+
 @media only screen and (max-width: 1100px) {
+
+  #headContainer {
+    justify-content: space-around;
+  }
   #formContainer {
     width: 80%;
     margin-top: 200px;
-    padding-bottom: 40px;
-    height: 45vh;
+    padding-bottom: 10%;
+    height: auto;
   }
   .labelContainer {
     flex-direction: column;
   }
   #mainBtn {
-    padding: 2px;
-    width: 100px;
-    font-size: 12px;
+    padding: 5px 10px;
+    width: 250px;
+    font-size: 28px;
+  }
+  #backBtn {
+    padding: 5px 10px;
+    width: 250px;
+    font-size: 28px;
+  }
+  .search-container input[type=text] {
+    font-size: 35px;
+    border-radius: 5px;
+    width: 85%;
+  }
+  .search-container button {
+    padding: 10px;
+    padding-top: 15px;
+    font-size: 25px;
+  }
+  .back {
+    left: 10%;
+    font-size: 30px;
   }
   .mainText {
-    font-size: 20pt;
+    font-size: 40pt;
     margin-left: 0px;
     margin-top: 10px;
-    padding-bottom: 30px;
+  }
+  label {
+    font-size: 25pt;
   }
   .labelName {
     margin-left: 33px;
@@ -442,14 +468,53 @@ footer p {
     padding-bottom: 5px;
   }
   .inputStyle {
-    height: 30px;
+    height: 3.5vh;
+    width: 60%;
+    font-size: 30px;
     margin-bottom: 1.5rem;
   }
   .inputStyle1 {
-    height: 50px;
+    height: 4.5vh;
+    width: 60%;
+    font-size: 30px;
   }
   .addBtnDiv {
     margin-top: 20px;
   }
-}
+  .addBtn {
+    font-size: 28px;
+  }
+  .saveBtn{
+    font-size: 28px;
+  }
+  .recipeCards {
+    width: 350px;
+    font-size: 23px;
+    margin: 6%;
+  }
+  .recipeCards img {
+    width: 350px;
+    height: 50px;
+  }
+  .btn {
+    height: 45px;
+  }
+  .details {
+    width: 120px;
+    height: 30px;
+    font-size: 20pt;
+    padding: 6px 8px;
+  }
+  .edit {
+    color: #81b441;
+    margin-left: 5rem;
+    font-size: 28px;
+    cursor: pointer;
+  }
+  .delete {
+    color: #fab95b;
+    margin-left: 10px;
+    font-size: 28px;
+    cursor: pointer;
+  }
 }
